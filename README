@@ -1,0 +1,10 @@
+A basic Private Message replay module for ZNC.
+
+This will store all private messages to & from the user.
+When a new client connects the messages will be replayed.
+
+At the moment, messages from the user will be shown as "from"
+the other user, but will have "me:" prepended on them.
+
+This was hacked together in a couple of hours and needs a lot of work.
+***No one else should really use this at the moment.***
