@@ -30,6 +30,13 @@ public:
             VCString vsRet;
             sLine.Split(" ", vsRet);
 
+            // Check the prefix on the to name and ignore special users, control channels and channels.
+            CString toNamePrefix = vsRet[1].Left(1);
+            if (toNamePrefix.Equals("*") || toNamePrefix.Equals("&") || toNamePrefix.Equals("#"))
+            {
+                return CONTINUE;
+            }
+
             CString msg = vsRet[2];
             msg.LeftChomp(1);
             for (int c = 3; vsRet.size() > c; c++)
